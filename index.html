@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
+</head>
+<body>
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Zenaida Frank</td>
+                <td>Software Engineer</td>
+                <td>New York</td>
+                <td>63</td>
+                <td>2010-01-04</td>
+                <td>$125,250</td>
+            </tr>
+            <tr>
+                <td>Zorita Serrano</td>
+                <td>Software Engineer</td>
+                <td>San Francisco</td>
+                <td>56</td>
+                <td>2012-06-01</td>
+                <td>$115,000</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/buttons/3.0.2/js/dataTables.buttons.js"></script>
+<script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.dataTables.js"></script>
+<script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.colVis.min.js"></script>
+<script>
+    new DataTable('#example', {
+        dom: 'frtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
+        layout: {
+            topStart: {
+                buttons: [
+                    {
+                        extend: 'colvis',
+                        columns: 'th:nth-child(n+2)',
+                        initColumns: [true,false, true, true, true, true],
+                        text: 'Mostrar u ocultar',
+                    }
+                ]
+            }
+        },
+    });
+</script>
+</html>
